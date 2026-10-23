@@ -1,0 +1,31 @@
+<svg width="1400" height="300" viewBox="0 0 1400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="pbg" x1="0" y1="0" x2="1400" y2="300" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#07111F"/>
+      <stop offset="1" stop-color="#10233D"/>
+    </linearGradient>
+    <linearGradient id="line" x1="96" y1="0" x2="1300" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#22D3EE"/>
+      <stop offset="0.52" stop-color="#4F8CFF"/>
+      <stop offset="1" stop-color="#8B5CF6"/>
+    </linearGradient>
+    <filter id="pglow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="1400" height="300" rx="26" fill="url(#pbg)"/>
+  <text x="62" y="54" fill="#F8FAFC" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="22" font-weight="700">Baseline inference flow</text>
+  <text x="62" y="78" fill="#7F9AB8" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13">Ordered execution with board-space result restoration</text>
+  <path d="M126 160H1275" stroke="url(#line)" stroke-width="4" filter="url(#pglow)"/>
+  <g font-family="Inter,Segoe UI,Arial,sans-serif" text-anchor="middle">
+    <g transform="translate(126 160)"><circle r="48" fill="#0D2940" stroke="#22D3EE" stroke-width="2"/><text y="-4" fill="#F8FAFC" font-size="17" font-weight="700">INPUT</text><text y="19" fill="#8FA9C6" font-size="11">image source</text></g>
+    <g transform="translate(318 160)"><circle r="48" fill="#0D2940" stroke="#28C7DF" stroke-width="2"/><text y="-4" fill="#F8FAFC" font-size="17" font-weight="700">SMT</text><text y="19" fill="#8FA9C6" font-size="11">OBB detection</text></g>
+    <g transform="translate(510 160)"><circle r="48" fill="#102A46" stroke="#36B4F4" stroke-width="2"/><text y="-4" fill="#F8FAFC" font-size="17" font-weight="700">CLS</text><text y="19" fill="#8FA9C6" font-size="11">classification</text></g>
+    <g transform="translate(702 160)"><circle r="48" fill="#122B4A" stroke="#4F8CFF" stroke-width="2"/><text y="-4" fill="#F8FAFC" font-size="17" font-weight="700">DIR</text><text y="19" fill="#8FA9C6" font-size="11">orientation</text></g>
+    <g transform="translate(894 160)"><circle r="48" fill="#17294A" stroke="#6878FA" stroke-width="2"/><text y="-4" fill="#F8FAFC" font-size="17" font-weight="700">IC</text><text y="19" fill="#8FA9C6" font-size="11">substructure</text></g>
+    <g transform="translate(1086 160)"><circle r="48" fill="#1A2749" stroke="#8068EF" stroke-width="2"/><text y="-4" fill="#F8FAFC" font-size="17" font-weight="700">OCR</text><text y="19" fill="#8FA9C6" font-size="11">text pipeline</text></g>
+    <g transform="translate(1275 160)"><circle r="48" fill="#202443" stroke="#A78BFA" stroke-width="2"/><text y="-4" fill="#F8FAFC" font-size="16" font-weight="700">RESULT</text><text y="19" fill="#8FA9C6" font-size="11">traceable output</text></g>
+  </g>
+  <g fill="#B6C8DC">
+    <path d="M262 160L250 153V167L262 160Z"/><path d="M454 160L442 153V167L454 160Z"/><path d="M646 160L634 153V167L646 160Z"/><path d="M838 160L826 153V167L838 160Z"/><path d="M1030 160L1018 153V167L1030 160Z"/><path d="M1219 160L1207 153V167L1219 160Z"/>
+  </g>
+  <text x="700" y="267" text-anchor="middle" fill="#6885A5" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12">INPUT IDENTITY · MODEL ROLE · COORDINATE LINEAGE · STAGE EVIDENCE · FAILURE REPORT</text>
+</svg>
