@@ -28,10 +28,10 @@ model-validation
 1. 在 GitHub 新建一个空的公开仓库，不勾选自动生成 README、License 或 `.gitignore`。
 2. 将本目录初始化为独立 Git 仓库。
 3. 添加远端并推送 `main`。
-4. 在仓库 Settings → General → Social preview 上传 `assets/hero.png`。
+4. 在仓库 Settings → General → Social preview 上传 `assets/social-preview.jpg`（1280 × 640，低于 1 MB）。
 5. 填写 Description、Website（如有）和 Topics。
 6. 在个人 GitHub Profile 中将该仓库置顶。
-7. 创建 `v1.0.0` Release，标题建议为 `Public Portfolio Launch`。
+7. 为最新版本标签创建 GitHub Release，并用简短要点说明本次展示更新。
 
 ## 公开前检查
 
