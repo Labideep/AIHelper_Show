@@ -34,6 +34,17 @@ AIHelper turns fragmented AOI model-debugging activities into a consistent engin
 | Validation | Read-only baselines, explicit failures, preserved diff reports |
 | Engineering | Unified orchestration, coordinate integrity, thread safety, GPU lifecycle |
 
+<table>
+  <tr>
+    <td align="center"><strong>6</strong><br><sub>baseline stages</sub></td>
+    <td align="center"><strong>3</strong><br><sub>execution interfaces</sub></td>
+    <td align="center"><strong>1</strong><br><sub>pipeline contract</sub></td>
+    <td align="center"><strong>1,984</strong><br><sub>pytest cases collected</sub></td>
+  </tr>
+</table>
+
+<sub>Test count reflects pytest collection from the private codebase on 2026-10-23. Device, model, and production-data acceptance are tracked separately.</sub>
+
 ## Demo
 
 <div align="center">
@@ -54,13 +65,29 @@ AIHelper turns fragmented AOI model-debugging activities into a consistent engin
 
 The application layer provides one execution contract across interfaces. Domain modules focus on vision stages, while infrastructure owns image sources, state, configuration, and published outputs.
 
-## Engineering highlights
+## Inference pipeline
 
-- One request and pipeline contract across GUI and batch entry points.
-- Explicit coordinate and evidence lineage for rotated geometry and parent-child results.
-- Background workers publish events; UI updates remain on the main thread.
-- Golden baselines are immutable during validation, and every difference produces a report.
-- Model preparation, session pools, concurrency, and GPU-heavy stages have defined lifecycles.
+<div align="center">
+  <img src="assets/pipeline.svg" width="100%" alt="AIHelper inference pipeline">
+</div>
+
+## Core engineering work
+
+- Consolidated desktop, batch, and standalone inference behind one request and execution contract.
+- Established coordinate and evidence lineage for rotated geometry and parent-child results.
+- Kept inference work in background tasks while UI updates remain on the main thread.
+- Built regression gates around immutable golden baselines and preserved difference reports.
+- Defined lifecycles for model preparation, session pools, concurrency, and GPU-heavy stages.
+
+## Technology
+
+```text
+Application     Python · Desktop GUI · Batch CLI
+Vision          OpenCV · ONNX Runtime · TensorRT
+Pipeline        Event-driven orchestration · Typed requests
+Validation      Pytest · Golden baseline · Structured reports
+Data            DZI · SQLite · JSON · Image tiles
+```
 
 ---
 
