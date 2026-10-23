@@ -99,17 +99,6 @@ Validation      Pytest · Golden baseline · Structured reports
 Data            DZI · SQLite · JSON · Image tiles
 ```
 
-## 仓库说明
-
-本仓库用于作品展示，因此有意不包含：
-
-- 业务源码与私有 Git 历史
-- 模型文件、标签字典和运行时配置
-- 客户程序、生产图片和真实检测结果
-- 内部服务地址、访问凭据与部署脚本
-
-如需深入了解，可在面试或技术交流中进行实时产品演示和私有代码走读。
-
 ---
 
 <div align="center">

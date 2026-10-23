@@ -62,10 +62,6 @@ The application layer provides one execution contract across interfaces. Domain 
 - Golden baselines are immutable during validation, and every difference produces a report.
 - Model preparation, session pools, concurrency, and GPU-heavy stages have defined lifecycles.
 
-## Private-source policy
-
-This repository intentionally excludes source code, private Git history, model files, customer programs, production images, credentials, and deployment configuration. A live product demonstration and private code walkthrough can be arranged during a technical interview.
-
 ---
 
 <div align="center">
