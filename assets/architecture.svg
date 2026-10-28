@@ -1,4 +1,6 @@
-<svg width="1200" height="650" viewBox="0 0 1200 650" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="1200" height="880" viewBox="0 0 1200 880" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">AIHelper inference, annotation, evaluation and reporting architecture</title>
+  <desc id="desc">Desktop, batch and inference API share a pipeline. Local browser annotation supplies human-maintained GT to evaluation. Saved scores feed standalone HTML and Excel report generators.</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="650" gradientUnits="userSpaceOnUse">
       <stop stop-color="#07111F"/>
@@ -14,12 +16,12 @@
       <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
   </defs>
-  <rect width="1200" height="650" rx="28" fill="url(#bg)"/>
+  <rect width="1200" height="880" rx="28" fill="url(#bg)"/>
   <circle cx="1090" cy="60" r="210" fill="#4F8CFF" fill-opacity="0.08"/>
   <circle cx="80" cy="600" r="220" fill="#22D3EE" fill-opacity="0.06"/>
 
   <text x="64" y="72" fill="#F8FAFC" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="28" font-weight="700">AIHelper Architecture</text>
-  <text x="64" y="104" fill="#8FA9C6" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15">One pipeline contract across interactive and batch workflows</text>
+  <text x="64" y="104" fill="#8FA9C6" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15">Shared inference execution + local annotation + independent report generation</text>
 
   <g font-family="Inter,Segoe UI,Arial,sans-serif">
     <rect x="64" y="145" width="322" height="96" rx="18" fill="#0E2035" stroke="#29435F"/>
@@ -54,13 +56,31 @@
     <text x="91" y="470" fill="#22D3EE" font-size="15" font-weight="700" letter-spacing="1">VISION MODULES</text>
     <text x="91" y="504" fill="#F8FAFC" font-size="17">SMT · CLS · DIR · IC · OCR</text>
     <text x="91" y="534" fill="#8FA9C6" font-size="13">Preprocess, inference, postprocess</text>
-    <text x="456" y="470" fill="#4F8CFF" font-size="15" font-weight="700" letter-spacing="1">VALIDATION</text>
-    <text x="456" y="504" fill="#F8FAFC" font-size="17">Baseline · Diff · Reports</text>
-    <text x="456" y="534" fill="#8FA9C6" font-size="13">Evidence-preserving quality gates</text>
+    <text x="456" y="470" fill="#4F8CFF" font-size="15" font-weight="700" letter-spacing="1">EVALUATION + REVIEW</text>
+    <text x="456" y="504" fill="#F8FAFC" font-size="17">Matching · Metrics · HTML</text>
+    <text x="456" y="534" fill="#8FA9C6" font-size="13">Read-only GT · layers · error navigation</text>
     <text x="821" y="470" fill="#A78BFA" font-size="15" font-weight="700" letter-spacing="1">INFRASTRUCTURE</text>
     <text x="821" y="504" fill="#F8FAFC" font-size="17">Images · State · Runtime</text>
     <text x="821" y="534" fill="#8FA9C6" font-size="13">Storage, locks, config, outputs</text>
   </g>
 
-  <text x="600" y="619" text-anchor="middle" fill="#6885A5" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12">PUBLIC ARCHITECTURE VIEW · IMPLEMENTATION REMAINS PRIVATE</text>
+  <path d="M326 664V610H524V577" stroke="#A78BFA" stroke-width="2"/>
+  <path d="M524 577L518 587H530Z" fill="#A78BFA"/>
+  <path d="M676 577V610H874V664" stroke="#4F8CFF" stroke-width="2"/>
+  <path d="M874 664L868 654H880Z" fill="#4F8CFF"/>
+  <g font-family="Inter,Segoe UI,Arial,sans-serif">
+    <text x="326" y="600" text-anchor="middle" fill="#B7CBE1" font-size="13">Human-maintained GT → evaluation</text>
+    <text x="874" y="600" text-anchor="middle" fill="#B7CBE1" font-size="13">Saved scores → report tools</text>
+    <rect x="64" y="664" width="524" height="140" rx="20" fill="#14253C" stroke="#A78BFA"/>
+    <rect x="612" y="664" width="524" height="140" rx="20" fill="#102A46" stroke="#4F8CFF"/>
+    <text x="91" y="701" fill="#A78BFA" font-size="15" font-weight="700">BROWSER ANNOTATION</text>
+    <text x="91" y="733" fill="#F8FAFC" font-size="17">Editor + local save service</text>
+    <text x="91" y="762" fill="#9DB6D2" font-size="14">Rotated boxes · parent links · OCR · revision checks</text>
+    <text x="91" y="786" fill="#9DB6D2" font-size="13">Portable packages support sequential handoff</text>
+    <text x="639" y="701" fill="#78A7FF" font-size="15" font-weight="700">AGGREGATION + VERSION COMPARISON</text>
+    <text x="639" y="733" fill="#F8FAFC" font-size="17">Standalone scripts → HTML + Excel</text>
+    <text x="639" y="762" fill="#9DB6D2" font-size="14">Program / category metrics · risk · error distributions</text>
+    <text x="639" y="786" fill="#9DB6D2" font-size="13">Reads existing scores without rerunning inference</text>
+  </g>
+  <text x="600" y="849" text-anchor="middle" fill="#6885A5" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12">PUBLIC ARCHITECTURE VIEW · IMPLEMENTATION REMAINS PRIVATE</text>
 </svg>

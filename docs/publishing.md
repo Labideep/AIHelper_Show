@@ -8,7 +8,7 @@
 
 建议 Description：
 
-> AOI vision pipeline validation, debugging and baseline comparison workbench.
+> PCB/AOI vision workbench for inference debugging, browser annotation, interactive visualization, quality scoring and version comparison.
 
 建议 Topics：
 
@@ -21,6 +21,10 @@ tensorrt
 desktop-application
 inference-pipeline
 model-validation
+image-annotation
+data-visualization
+model-evaluation
+benchmarking
 ```
 
 ## 发布步骤
@@ -40,6 +44,14 @@ model-validation
 - 确认没有模型、配置、日志、数据库、令牌或源码。
 - 从全新目录 clone 一次公开仓库，检查 README 图片和链接。
 - 不要将私有源码仓库设置为该公开仓库的其他分支。
+
+## 展示内容维护
+
+- 中英文首页同步维护推理、标注、可视化、评分、版本分析和数据交付六个方向。
+- 功能细节与独立脚本统一登记在 `docs/features.md`，明确主程序、脚本工具和接入参考的边界。
+- 当前 GIF 只演示桌面推理与批处理；新增标注或评分演示应使用允许公开的数据，不将功能关系图标成实际截图。
+- 汇总报告链接到源报告时需要保留关联资源；公开展示前另外检查其路径与数据内容。
+- 测试数量与性能数据保留采集日期和范围，不将历史数据写成当前设备验收结论。
 
 ## 推荐提交节奏
 

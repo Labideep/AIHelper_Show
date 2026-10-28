@@ -2,6 +2,20 @@
 
 All notable public showcase updates are recorded here.
 
+## [Unreleased]
+
+### Changed
+
+- Expanded both READMEs from inference-focused introductions to annotation, interactive visualization, scoring, version comparison, and data delivery.
+- Documented aggregate scoring, HTML dashboards, Excel output, diagnostics, and supporting standalone scripts.
+- Updated architecture, engineering decisions, project narrative, and suggested repository metadata to cover the full toolchain.
+
+### Added
+
+- A detailed feature catalog covering desktop workflows, browser tools, portable annotation, external interfaces, and specialized utilities.
+- A capability flow diagram and an expanded architecture diagram distinguishing inference, annotation, evaluation, and report generation.
+- Explicit boundaries for local annotation services, report resources, Excel dependencies, DIR diagnostics, and integration references.
+
 ## [1.1.0] - 2026-10-23
 
 ### Changed

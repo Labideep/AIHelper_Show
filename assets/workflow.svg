@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="460" viewBox="0 0 1200 460" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">AIHelper: inference, annotation, evaluation, and reporting</title>
+  <desc id="desc">Predictions and human-maintained ground truth feed evaluation. Saved scores feed HTML and Excel reports, version comparison, and diagnostics. Existing results can be reused; evaluation never updates ground truth.</desc>
+  <defs>
+    <linearGradient id="bg" x2="1200" y2="460" gradientUnits="userSpaceOnUse"><stop stop-color="#07111F"/><stop offset="1" stop-color="#10233D"/></linearGradient>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="none" stroke="#7998BA" stroke-width="1.5"/></marker>
+  </defs>
+  <rect width="1200" height="460" rx="26" fill="url(#bg)"/>
+  <g font-family="Segoe UI,Arial,sans-serif">
+    <text x="48" y="55" fill="#F8FAFC" font-size="25" font-weight="700">From predictions to quality reports</text>
+    <text x="48" y="84" fill="#9DB6D2" font-size="15">Desktop debugging + browser tools + standalone reporting</text>
+    <rect x="48" y="118" width="300" height="104" rx="18" fill="#0E263B" stroke="#22D3EE"/>
+    <text x="70" y="150" fill="#22D3EE" font-size="13" font-weight="700">PREDICTIONS</text>
+    <text x="70" y="180" fill="#F8FAFC" font-size="19" font-weight="600">Run or import results</text>
+    <text x="70" y="204" fill="#9DB6D2" font-size="14">Desktop / batch / inference API</text>
+    <rect x="48" y="248" width="300" height="104" rx="18" fill="#14253C" stroke="#A78BFA"/>
+    <text x="70" y="280" fill="#A78BFA" font-size="13" font-weight="700">GROUND TRUTH</text>
+    <text x="70" y="310" fill="#F8FAFC" font-size="19" font-weight="600">Annotate in the browser</text>
+    <text x="70" y="334" fill="#9DB6D2" font-size="14">Human edits / local save service</text>
+    <path d="M348 170H390V220H434" stroke="#7998BA" stroke-width="2" marker-end="url(#arrow)"/>
+    <path d="M348 300H390V250H434" stroke="#7998BA" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="440" y="152" width="280" height="170" rx="20" fill="#102A46" stroke="#4F8CFF" stroke-width="2"/>
+    <text x="464" y="189" fill="#78A7FF" font-size="13" font-weight="700">REVIEW + EVALUATE</text>
+    <text x="464" y="222" fill="#F8FAFC" font-size="20" font-weight="600">Inspect each stage</text>
+    <text x="464" y="250" fill="#B7CBE1" font-size="14">GT overlays / error navigation</text>
+    <text x="464" y="274" fill="#B7CBE1" font-size="14">Detection / CLS / Stage2 / OCR</text>
+    <text x="464" y="298" fill="#9DB6D2" font-size="13">Evaluation reads GT without edits</text>
+    <path d="M720 237H804" stroke="#7998BA" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="762" y="218" fill="#9DB6D2" font-size="12" text-anchor="middle">scores</text>
+    <rect x="812" y="118" width="340" height="234" rx="20" fill="#14253C" stroke="#A78BFA"/>
+    <text x="836" y="151" fill="#A78BFA" font-size="13" font-weight="700">AGGREGATE + COMPARE</text>
+    <text x="836" y="185" fill="#F8FAFC" font-size="20" font-weight="600">HTML + Excel reports</text>
+    <text x="836" y="219" fill="#B7CBE1" font-size="15">Program and version comparisons</text>
+    <text x="836" y="247" fill="#B7CBE1" font-size="15">Component category metrics</text>
+    <text x="836" y="275" fill="#B7CBE1" font-size="15">Risk ordering / error distributions</text>
+    <text x="836" y="313" fill="#9DB6D2" font-size="14">Follow links to individual reports</text>
+    <path d="M48 382H1152" stroke="#29435F"/>
+    <text x="600" y="414" fill="#9DB6D2" font-size="14" text-anchor="middle">Also available: portable annotation packages · data collection API · image crop tools</text>
+    <text x="600" y="440" fill="#6885A5" font-size="11" text-anchor="middle">CAPABILITY DIAGRAM · NOT A PRODUCT SCREENSHOT</text>
+  </g>
+</svg>
