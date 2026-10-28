@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" fill="none" role="img" aria-labelledby="title desc">
+<title id="title">业务架构</title><desc id="desc">按输入、业务能力和交付产物组织的模块视图。图中模块按任务选用，不表示固定执行顺序。</desc>
+<rect width="1200" height="680" rx="24" fill="#0B1424"/>
+<g font-family="Noto Sans CJK SC,Microsoft YaHei,Segoe UI,Arial,sans-serif">
+<text x="48" y="36" fill="#54D9D0" font-size="12" font-weight="700">AIHELPER / BUSINESS CAPABILITIES</text>
+<text x="48" y="76" fill="#F4F7FC" font-size="28" font-weight="700">业务架构</text>
+<rect x="48" y="108" width="1104" height="80" rx="16" fill="#14253B" stroke="#2A3A52"/>
+<text x="72" y="143" fill="#54D9D0" font-size="19" font-weight="600">图源与程序</text>
+<text x="264" y="143" fill="#E3EBF7" font-size="17" font-weight="400">程序 / SQLite · 多光源整板图 · DZI / FOV · 普通图片</text>
+<text x="264" y="170" fill="#B7C7DD" font-size="14" font-weight="400">图源读取 · 区域裁切 · 缩放与坐标映射</text>
+<text x="48" y="216" fill="#879CB9" font-size="13" font-weight="600">业务能力 / 按任务组合使用</text>
+<rect x="48" y="232" width="352" height="132" rx="16" fill="#111E31" stroke="#2A3A52"/>
+<rect x="68" y="254" width="4" height="24" rx="2" fill="#54D9D0"/>
+<text x="84" y="274" fill="#F4F7FC" font-size="21" font-weight="600">模型分析</text>
+<text x="350" y="273" fill="#54D9D0" font-size="14" font-weight="600">01</text>
+<text x="72" y="308" fill="#B7C7DD" font-size="16" font-weight="400">元件检测 · 分类 · 方向校正</text>
+<text x="72" y="335" fill="#B7C7DD" font-size="16" font-weight="400">子结构检测 · OCR · 连锡</text>
+<rect x="424" y="232" width="352" height="132" rx="16" fill="#111E31" stroke="#2A3A52"/>
+<rect x="444" y="254" width="4" height="24" rx="2" fill="#93AEFF"/>
+<text x="460" y="274" fill="#F4F7FC" font-size="21" font-weight="600">人工标注</text>
+<text x="726" y="273" fill="#93AEFF" font-size="14" font-weight="600">02</text>
+<text x="448" y="308" fill="#B7C7DD" font-size="16" font-weight="400">旋转框 · 文本 · 阅读方向</text>
+<text x="448" y="335" fill="#B7C7DD" font-size="16" font-weight="400">父子关联 · 排除区 · 版本检查</text>
+<rect x="800" y="232" width="352" height="132" rx="16" fill="#111E31" stroke="#2A3A52"/>
+<rect x="820" y="254" width="4" height="24" rx="2" fill="#C4A4FF"/>
+<text x="836" y="274" fill="#F4F7FC" font-size="21" font-weight="600">软件语义</text>
+<text x="1102" y="273" fill="#C4A4FF" font-size="14" font-weight="600">03</text>
+<text x="824" y="308" fill="#B7C7DD" font-size="16" font-weight="400">检测框规则 · 方向结果复用</text>
+<text x="824" y="335" fill="#B7C7DD" font-size="16" font-weight="400">补框 · 角色刷新 · 检测树</text>
+<rect x="48" y="384" width="352" height="132" rx="16" fill="#111E31" stroke="#2A3A52"/>
+<rect x="68" y="406" width="4" height="24" rx="2" fill="#54D9D0"/>
+<text x="84" y="426" fill="#F4F7FC" font-size="21" font-weight="600">结果可视化</text>
+<text x="350" y="425" fill="#54D9D0" font-size="14" font-weight="600">04</text>
+<text x="72" y="460" fill="#B7C7DD" font-size="16" font-weight="400">桌面画布 · HTML 图层</text>
+<text x="72" y="487" fill="#B7C7DD" font-size="16" font-weight="400">目标定位 · 错误筛选 · 前后对照</text>
+<rect x="424" y="384" width="352" height="132" rx="16" fill="#111E31" stroke="#2A3A52"/>
+<rect x="444" y="406" width="4" height="24" rx="2" fill="#93AEFF"/>
+<text x="460" y="426" fill="#F4F7FC" font-size="21" font-weight="600">质量评测</text>
+<text x="726" y="425" fill="#93AEFF" font-size="14" font-weight="600">05</text>
+<text x="448" y="460" fill="#B7C7DD" font-size="16" font-weight="400">检测 / 分类 / 子结构 / OCR</text>
+<text x="448" y="487" fill="#B7C7DD" font-size="16" font-weight="400">几何质量 · 漏检误检 · 单程序报告</text>
+<rect x="800" y="384" width="352" height="132" rx="16" fill="#111E31" stroke="#2A3A52"/>
+<rect x="820" y="406" width="4" height="24" rx="2" fill="#C4A4FF"/>
+<text x="836" y="426" fill="#F4F7FC" font-size="21" font-weight="600">汇总与版本分析</text>
+<text x="1102" y="425" fill="#C4A4FF" font-size="14" font-weight="600">06</text>
+<text x="824" y="460" fill="#B7C7DD" font-size="16" font-weight="400">跨程序汇总 · 元件类别指标</text>
+<text x="824" y="487" fill="#B7C7DD" font-size="16" font-weight="400">风险排序 · 误差分布 · 报告下钻</text>
+<text x="48" y="548" fill="#879CB9" font-size="13" font-weight="600">成果交付</text>
+<rect x="48" y="564" width="1104" height="64" rx="16" fill="#14253B" stroke="#2A3A52"/>
+<text x="72" y="604" fill="#E3EBF7" font-size="18" font-weight="400">结果 JSON  /  标注 GT  /  HTML 报告  /  Excel 工作簿  /  便携任务包  /  样本裁图</text>
+<text x="48" y="658" fill="#879CB9" font-size="12" font-weight="400">模块关系示意 · 各模块按任务选用</text>
+</g></svg>

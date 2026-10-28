@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="780" viewBox="0 0 1200 780" fill="none" role="img" aria-labelledby="title desc">
+<title id="title">Technical architecture</title><desc id="desc">Interfaces, Python application services, vision and inference runtimes, and shared execution and storage support. Annotation and reporting can run independently of inference.</desc>
+<rect width="1200" height="780" rx="24" fill="#0B1424"/>
+<g font-family="Noto Sans CJK SC,Microsoft YaHei,Segoe UI,Arial,sans-serif">
+<text x="48" y="36" fill="#54D9D0" font-size="12" font-weight="700">AIHELPER / TECHNOLOGY LAYERS</text>
+<text x="48" y="76" fill="#F4F7FC" font-size="28" font-weight="700">Technical architecture</text>
+<text x="48" y="112" fill="#879CB9" font-size="13" font-weight="600">01 / INTERFACES</text>
+<rect x="48" y="128" width="352" height="126" rx="16" fill="#111E31" stroke="#2A3A52"/>
+<rect x="68" y="150" width="4" height="24" rx="2" fill="#54D9D0"/>
+<text x="84" y="170" fill="#F4F7FC" font-size="21" font-weight="600">Desktop</text>
+<text x="72" y="204" fill="#B7C7DD" font-size="16" font-weight="400">PySide6 / Qt</text>
+<text x="72" y="231" fill="#B7C7DD" font-size="16" font-weight="400">Fluent Widgets</text>
+<rect x="424" y="128" width="352" height="126" rx="16" fill="#111E31" stroke="#2A3A52"/>
+<rect x="444" y="150" width="4" height="24" rx="2" fill="#93AEFF"/>
+<text x="460" y="170" fill="#F4F7FC" font-size="21" font-weight="600">Browser</text>
+<text x="448" y="204" fill="#B7C7DD" font-size="16" font-weight="400">HTML · JavaScript · Canvas</text>
+<text x="448" y="231" fill="#B7C7DD" font-size="16" font-weight="400">Annotation · Results · Score views</text>
+<rect x="800" y="128" width="352" height="126" rx="16" fill="#111E31" stroke="#2A3A52"/>
+<rect x="820" y="150" width="4" height="24" rx="2" fill="#C4A4FF"/>
+<text x="836" y="170" fill="#F4F7FC" font-size="21" font-weight="600">Batch and integration</text>
+<text x="824" y="204" fill="#B7C7DD" font-size="16" font-weight="400">Python CLI · Subprocess calls</text>
+<text x="824" y="231" fill="#B7C7DD" font-size="16" font-weight="400">JSON contract · Data collection</text>
+<text x="48" y="287" fill="#879CB9" font-size="13" font-weight="600">02 / PYTHON APPLICATION SERVICES</text>
+<rect x="48" y="303" width="352" height="126" rx="16" fill="#111E31" stroke="#2A3A52"/>
+<rect x="68" y="325" width="4" height="24" rx="2" fill="#54D9D0"/>
+<text x="84" y="345" fill="#F4F7FC" font-size="21" font-weight="600">Inference tasks</text>
+<text x="72" y="379" fill="#B7C7DD" font-size="16" font-weight="400">Request building · Stage orchestration</text>
+<text x="72" y="406" fill="#B7C7DD" font-size="16" font-weight="400">Progress events · Resource lifecycle</text>
+<rect x="424" y="303" width="352" height="126" rx="16" fill="#111E31" stroke="#2A3A52"/>
+<rect x="444" y="325" width="4" height="24" rx="2" fill="#93AEFF"/>
+<text x="460" y="345" fill="#F4F7FC" font-size="21" font-weight="600">Annotation and results</text>
+<text x="448" y="379" fill="#B7C7DD" font-size="16" font-weight="400">Local service · Relationship validation</text>
+<text x="448" y="406" fill="#B7C7DD" font-size="16" font-weight="400">Result import / export · Task packages</text>
+<rect x="800" y="303" width="352" height="126" rx="16" fill="#111E31" stroke="#2A3A52"/>
+<rect x="820" y="325" width="4" height="24" rx="2" fill="#C4A4FF"/>
+<text x="836" y="345" fill="#F4F7FC" font-size="21" font-weight="600">Evaluation and reporting</text>
+<text x="824" y="379" fill="#B7C7DD" font-size="16" font-weight="400">Matching and scores · Report rendering</text>
+<text x="824" y="406" fill="#B7C7DD" font-size="16" font-weight="400">Aggregation scripts · Version analysis</text>
+<text x="48" y="462" fill="#879CB9" font-size="13" font-weight="600">03 / COMPUTE, RUNTIME AND DATA</text>
+<rect x="48" y="478" width="352" height="126" rx="16" fill="#111E31" stroke="#2A3A52"/>
+<rect x="68" y="500" width="4" height="24" rx="2" fill="#54D9D0"/>
+<text x="84" y="520" fill="#F4F7FC" font-size="21" font-weight="600">Vision compute</text>
+<text x="72" y="554" fill="#B7C7DD" font-size="16" font-weight="400">OpenCV · NumPy · SciPy</text>
+<text x="72" y="581" fill="#B7C7DD" font-size="16" font-weight="400">Image processing · Geometry</text>
+<rect x="424" y="478" width="352" height="126" rx="16" fill="#111E31" stroke="#2A3A52"/>
+<rect x="444" y="500" width="4" height="24" rx="2" fill="#93AEFF"/>
+<text x="460" y="520" fill="#F4F7FC" font-size="21" font-weight="600">Model inference</text>
+<text x="448" y="554" fill="#B7C7DD" font-size="16" font-weight="400">ONNX Runtime · TensorRT</text>
+<text x="448" y="581" fill="#B7C7DD" font-size="16" font-weight="400">Model sessions · GPU runtime</text>
+<rect x="800" y="478" width="352" height="126" rx="16" fill="#111E31" stroke="#2A3A52"/>
+<rect x="820" y="500" width="4" height="24" rx="2" fill="#C4A4FF"/>
+<text x="836" y="520" fill="#F4F7FC" font-size="21" font-weight="600">Storage and reports</text>
+<text x="824" y="554" fill="#B7C7DD" font-size="16" font-weight="400">SQLite · JSON · DZI / FOV</text>
+<text x="824" y="581" fill="#B7C7DD" font-size="16" font-weight="400">HTML · Node.js / Excel generation</text>
+<rect x="48" y="638" width="1104" height="68" rx="16" fill="#14253B" stroke="#2A3A52"/>
+<text x="72" y="680" fill="#54D9D0" font-size="18" font-weight="600">SUPPORT</text>
+<text x="264" y="680" fill="#E3EBF7" font-size="17" font-weight="400">Background tasks · Process isolation · File locks · Atomic writes · Pytest</text>
+<text x="48" y="750" fill="#879CB9" font-size="12" font-weight="400">LAYER VIEW · ANNOTATION AND REPORTING CAN RUN INDEPENDENTLY OF INFERENCE</text>
+</g></svg>

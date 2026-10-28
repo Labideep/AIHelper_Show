@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" fill="none" role="img" aria-labelledby="title desc">
+<title id="title">Business architecture</title><desc id="desc">Modules grouped by inputs, business capabilities, and deliverables. Modules are selected per task; this is not a fixed execution sequence.</desc>
+<rect width="1200" height="680" rx="24" fill="#0B1424"/>
+<g font-family="Noto Sans CJK SC,Microsoft YaHei,Segoe UI,Arial,sans-serif">
+<text x="48" y="36" fill="#54D9D0" font-size="12" font-weight="700">AIHELPER / BUSINESS CAPABILITIES</text>
+<text x="48" y="76" fill="#F4F7FC" font-size="28" font-weight="700">Business architecture</text>
+<rect x="48" y="108" width="1104" height="80" rx="16" fill="#14253B" stroke="#2A3A52"/>
+<text x="72" y="143" fill="#54D9D0" font-size="19" font-weight="600">INPUTS</text>
+<text x="264" y="143" fill="#E3EBF7" font-size="17" font-weight="400">Programs / SQLite · Multi-light board images · DZI / FOV · Image files</text>
+<text x="264" y="170" fill="#B7C7DD" font-size="14" font-weight="400">Image reading · Region crops · Scaling and coordinate mapping</text>
+<text x="48" y="216" fill="#879CB9" font-size="13" font-weight="600">CAPABILITIES / SELECTED PER TASK</text>
+<rect x="48" y="232" width="352" height="132" rx="16" fill="#111E31" stroke="#2A3A52"/>
+<rect x="68" y="254" width="4" height="24" rx="2" fill="#54D9D0"/>
+<text x="84" y="274" fill="#F4F7FC" font-size="21" font-weight="600">Vision analysis</text>
+<text x="350" y="273" fill="#54D9D0" font-size="14" font-weight="600">01</text>
+<text x="72" y="308" fill="#B7C7DD" font-size="16" font-weight="400">Detection · Classification · Direction</text>
+<text x="72" y="335" fill="#B7C7DD" font-size="16" font-weight="400">Substructures · OCR · Solder bridges</text>
+<rect x="424" y="232" width="352" height="132" rx="16" fill="#111E31" stroke="#2A3A52"/>
+<rect x="444" y="254" width="4" height="24" rx="2" fill="#93AEFF"/>
+<text x="460" y="274" fill="#F4F7FC" font-size="21" font-weight="600">Annotation</text>
+<text x="726" y="273" fill="#93AEFF" font-size="14" font-weight="600">02</text>
+<text x="448" y="308" fill="#B7C7DD" font-size="16" font-weight="400">Rotated boxes · Text · Reading direction</text>
+<text x="448" y="335" fill="#B7C7DD" font-size="16" font-weight="400">Parent links · Exclusions · Revisions</text>
+<rect x="800" y="232" width="352" height="132" rx="16" fill="#111E31" stroke="#2A3A52"/>
+<rect x="820" y="254" width="4" height="24" rx="2" fill="#C4A4FF"/>
+<text x="836" y="274" fill="#F4F7FC" font-size="21" font-weight="600">Software semantics</text>
+<text x="1102" y="273" fill="#C4A4FF" font-size="14" font-weight="600">03</text>
+<text x="824" y="308" fill="#B7C7DD" font-size="16" font-weight="400">Box rules · Direction result reuse</text>
+<text x="824" y="335" fill="#B7C7DD" font-size="16" font-weight="400">Completion · Roles · Detection trees</text>
+<rect x="48" y="384" width="352" height="132" rx="16" fill="#111E31" stroke="#2A3A52"/>
+<rect x="68" y="406" width="4" height="24" rx="2" fill="#54D9D0"/>
+<text x="84" y="426" fill="#F4F7FC" font-size="21" font-weight="600">Visual review</text>
+<text x="350" y="425" fill="#54D9D0" font-size="14" font-weight="600">04</text>
+<text x="72" y="460" fill="#B7C7DD" font-size="16" font-weight="400">Desktop canvas · HTML layers</text>
+<text x="72" y="487" fill="#B7C7DD" font-size="16" font-weight="400">Object navigation · Errors · Comparison</text>
+<rect x="424" y="384" width="352" height="132" rx="16" fill="#111E31" stroke="#2A3A52"/>
+<rect x="444" y="406" width="4" height="24" rx="2" fill="#93AEFF"/>
+<text x="460" y="426" fill="#F4F7FC" font-size="21" font-weight="600">Quality evaluation</text>
+<text x="726" y="425" fill="#93AEFF" font-size="14" font-weight="600">05</text>
+<text x="448" y="460" fill="#B7C7DD" font-size="16" font-weight="400">Detection / CLS / Substructures / OCR</text>
+<text x="448" y="487" fill="#B7C7DD" font-size="16" font-weight="400">Geometry · Misses / extras · Reports</text>
+<rect x="800" y="384" width="352" height="132" rx="16" fill="#111E31" stroke="#2A3A52"/>
+<rect x="820" y="406" width="4" height="24" rx="2" fill="#C4A4FF"/>
+<text x="836" y="426" fill="#F4F7FC" font-size="21" font-weight="600">Version analysis</text>
+<text x="1102" y="425" fill="#C4A4FF" font-size="14" font-weight="600">06</text>
+<text x="824" y="460" fill="#B7C7DD" font-size="16" font-weight="400">Program and category summaries</text>
+<text x="824" y="487" fill="#B7C7DD" font-size="16" font-weight="400">Risk ordering · Distributions · Drill-down</text>
+<text x="48" y="548" fill="#879CB9" font-size="13" font-weight="600">DELIVERABLES</text>
+<rect x="48" y="564" width="1104" height="64" rx="16" fill="#14253B" stroke="#2A3A52"/>
+<text x="72" y="604" fill="#E3EBF7" font-size="18" font-weight="400">Result JSON  /  Ground truth  /  HTML reports  /  Excel  /  Portable tasks  /  Sample crops</text>
+<text x="48" y="658" fill="#879CB9" font-size="12" font-weight="400">MODULE VIEW · CAPABILITIES ARE SELECTED PER TASK</text>
+</g></svg>

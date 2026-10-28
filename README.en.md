@@ -4,31 +4,38 @@
 
 ### A PCB/AOI vision development and evaluation workbench
 
-Connect multiple models, human annotation, and quality evaluation — from full-board images to individual components and version comparisons.
+Multi-model detection · Browser annotation · Interactive visualization · Scoring and version analysis
 
-[Demos](#product-demos) · [Features](#what-you-can-do) · [Project depth](#the-problems-the-project-addresses) · [Full feature catalog (中文)](docs/features.md) · [中文](README.md)
+[Demos](#product-demos) · [Features](#what-you-can-do) · [Business architecture](#business-architecture) · [Technical architecture](#technical-architecture) · [中文](README.md)
 
 </div>
 
-> This is the public showcase for AIHelper. Source code, models, and production data remain private.
+> This repository showcases AIHelper's capabilities and design. Source code, models, and production data remain private.
 
-PCB automated optical inspection (AOI) involves locating components, identifying their category and orientation, detecting leads and pads, and reading text. Each step can affect later decisions. A model change then needs evaluation across different boards and component categories.
-
-AIHelper brings desktop debugging, browser annotation, interactive reports, and batch evaluation into this workflow. Algorithm developers can trace stage results, testers can compare versions, and annotators can maintain ground truth, with their work linked through the same images and results.
+AIHelper connects image input, multiple vision models, human review, and quality reporting for PCB automated optical inspection (AOI) development, testing, and annotation.
 
 ## Product demos
 
-### One program: inspect multiple detection stages
+These animations show detection results from two different manufacturing processes. Click either animation to view it at its original size.
 
-Load program images, run detection, classification, and text recognition, and inspect stage progress, results, and timing in one view.
-
-![Desktop demo: running a program and inspecting detection results](assets/smt-workflow.gif)
-
-### Multiple programs: batch execution and saved results
-
-Process multiple programs, follow their execution status, and save results and reports for subsequent score aggregation and version comparison.
-
-![Desktop demo: multi-program batch execution and progress](assets/multi-program.gif)
+<table>
+  <thead>
+    <tr>
+      <th align="left" width="50%">01 · Process results</th>
+      <th align="left" width="50%">02 · Process results</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="assets/process-example-01.gif"><img src="assets/process-example-01.gif" width="100%" alt="Process example 01: detection overlays and component results"></a></td>
+      <td><a href="assets/process-example-02.gif"><img src="assets/process-example-02.gif" width="100%" alt="Process example 02: board results and local detail inspection"></a></td>
+    </tr>
+    <tr>
+      <td align="center"><sub>Detection overlays · Component results</sub></td>
+      <td align="center"><sub>Board results · Local detail inspection</sub></td>
+    </tr>
+  </tbody>
+</table>
 
 ## What you can do
 
@@ -58,46 +65,34 @@ Development reports prioritize issues, show position, size, and angle error dist
 
 [Explore aggregate scoring and its companion tools (中文)](docs/features.md#5-综合评分版本对比与开发诊断)
 
-## The problems the project addresses
+## Business architecture
 
-### Connecting multiple models around the same component
+![AIHelper business architecture: image inputs, six capability modules, and deliverables](assets/business-architecture.en.svg)
 
-A component's position, category, orientation, internal structure, and text come from different processing steps. An orientation adjustment can change the images used by subsequent cropping and recognition.
+**Evaluation flow:** model results + human ground truth → stage scores → program and version summaries. People maintain annotations; scoring and aggregation read existing data.
 
-AIHelper connects these steps, retains relationships between components, leads, pads, and text, and lets users compare model results with software-generated detection boxes. When results differ, the processing history helps locate where the difference begins.
+## Technical architecture
 
-### Preserving positions between full boards and small structures
+![AIHelper technical architecture: interfaces, application services, compute, and data](assets/technology-stack.en.svg)
 
-The same board may be viewed under different lighting and at different image sizes, then tiled, resized, or cropped at an angle. Small differences in a local crop can affect lead, pad, or text positions when mapped back to the board.
+| Layer | Technologies and implementation |
+| :--- | :--- |
+| Desktop | Python · PySide6 / Qt · Fluent Widgets |
+| Browser tools | HTML · JavaScript · Canvas · Local annotation service |
+| Vision and inference | OpenCV · NumPy · SciPy · ONNX Runtime · TensorRT |
+| Data and reports | SQLite · JSON · DZI / FOV · HTML reports · Node.js / Excel generation |
+| Tasks and validation | Background tasks · Process isolation · File locks and atomic writes · Pytest |
 
-AIHelper retains image transforms and result positions, restores results to board coordinates, and supports detailed local viewing. Evaluation examines center displacement, size, angle, and coverage to help identify geometric problems.
+[Architecture details (中文)](docs/architecture.md) · [Engineering (中文)](docs/engineering.md)
 
-### Tracing version changes to programs, categories, and objects
+## Supporting tools and deliverables
 
-A model can perform differently across programs and component categories. Version evaluation needs to reveal both overall changes and local problems.
+| Module | Artifacts and interfaces |
+| :--- | :--- |
+| Aggregate scoring | `综合评分.py` · Version dashboards · Development diagnostics · Excel workbooks |
+| Portable annotation | `.aitask` packages · Windows annotation runtime · GT export |
+| Data collection | Board and image inference interfaces · JSON results · Subprocess client |
+| Sample preparation | Image batches with resume · DIP crops grouped by category |
+| Standalone algorithms | Regional OCR · Solder-bridge detection / segmentation · C ABI and C++ / C# integration reference |
 
-AIHelper evaluates detection, classification, internal structures, and text recognition separately, then aggregates results by program and component category. Version dashboards, error distributions, and links to source reports let readers follow an unusual metric back to the relevant image.
-
-### Keeping annotation and evaluation grounded in explicit references
-
-Component, internal-structure, and text annotations are related. Editing or handing off annotations requires checking that these relationships remain valid and that an older browser page cannot overwrite newly saved work.
-
-AIHelper checks relationships and revision conflicts when saving, and retains backups. Scoring reads human-maintained ground truth; saved results can be reevaluated and historical scores can be aggregated again, without automatically changing annotations to improve a score.
-
-## Beyond desktop debugging
-
-The same capabilities support other parts of the workflow:
-
-- **Annotation handoff:** package images, existing annotations, and predictions for continued work on another Windows computer, then return the completed annotations.
-- **Sample preparation:** process image folders with resume support, or collect component crops by predicted category for review and dataset organization.
-- **Standalone algorithms and external calls:** test text recognition, solder-bridge detection, or segmentation in selected regions, and provide results to data collection projects through headless interfaces.
-
-The [full feature catalog (中文)](docs/features.md) also covers `综合评分.py` and its HTML/Excel reporting tools, DIP crop collection, and the native solder-bridge integration reference.
-
-## Project documentation
-
-- [Feature catalog (中文)](docs/features.md): capabilities, standalone tools, and usage boundaries.
-- [Project story (中文)](docs/project-story.md): the problems behind the project and a typical workflow.
-- [Architecture (中文)](docs/architecture.md) · [Engineering (中文)](docs/engineering.md): implementation, validation, and design decisions.
-
-<sub>Built with Python · Qt · OpenCV · ONNX Runtime · TensorRT · HTML / JavaScript</sub>
+[Full feature catalog (中文)](docs/features.md) · [Project story (中文)](docs/project-story.md)

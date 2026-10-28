@@ -6,6 +6,20 @@
 
 AIHelper 同时服务交互式调试、批量回归、人工标注和质量分析。推理入口共享应用流水线，保证请求验证、阶段顺序、事件和失败处理有共同依据；标注服务负责 GT 编辑与保存，报告工具通过结构化结果和评分记录连接。汇总历史评分时可以直接读取产物，无需再次推理。
 
+## 业务模块
+
+![图源输入、业务模块与交付产物](../assets/business-architecture.svg)
+
+业务模块按任务组合使用。模型结果与人工维护的 GT 进入评测，保存的评分记录再进入程序和版本汇总；标注编辑、结果查看与历史报告汇总可以独立开展。
+
+## 技术分层
+
+![交互入口、应用服务与运行基础](../assets/technology-stack.svg)
+
+桌面使用 PySide6 / Qt，浏览器工具使用 HTML、JavaScript 与 Canvas；Python 应用服务连接推理、标注、结果和评测。图像计算由 OpenCV、NumPy、SciPy 支持，模型运行使用 ONNX Runtime / TensorRT，报告生成覆盖 HTML 和依赖 Node.js 的 Excel 工具。
+
+## 服务与数据关系
+
 ![AIHelper architecture](../assets/architecture.svg)
 
 ## 分层职责

@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="780" viewBox="0 0 1200 780" fill="none" role="img" aria-labelledby="title desc">
+<title id="title">技术架构</title><desc id="desc">交互入口、Python 应用服务、视觉计算与推理运行时，以及共享的任务和存储保障。标注与报告独立于模型推理运行。</desc>
+<rect width="1200" height="780" rx="24" fill="#0B1424"/>
+<g font-family="Noto Sans CJK SC,Microsoft YaHei,Segoe UI,Arial,sans-serif">
+<text x="48" y="36" fill="#54D9D0" font-size="12" font-weight="700">AIHELPER / TECHNOLOGY LAYERS</text>
+<text x="48" y="76" fill="#F4F7FC" font-size="28" font-weight="700">技术架构</text>
+<text x="48" y="112" fill="#879CB9" font-size="13" font-weight="600">01 / 交互与调用</text>
+<rect x="48" y="128" width="352" height="126" rx="16" fill="#111E31" stroke="#2A3A52"/>
+<rect x="68" y="150" width="4" height="24" rx="2" fill="#54D9D0"/>
+<text x="84" y="170" fill="#F4F7FC" font-size="21" font-weight="600">桌面交互</text>
+<text x="72" y="204" fill="#B7C7DD" font-size="16" font-weight="400">PySide6 / Qt</text>
+<text x="72" y="231" fill="#B7C7DD" font-size="16" font-weight="400">Fluent Widgets</text>
+<rect x="424" y="128" width="352" height="126" rx="16" fill="#111E31" stroke="#2A3A52"/>
+<rect x="444" y="150" width="4" height="24" rx="2" fill="#93AEFF"/>
+<text x="460" y="170" fill="#F4F7FC" font-size="21" font-weight="600">浏览器工具</text>
+<text x="448" y="204" fill="#B7C7DD" font-size="16" font-weight="400">HTML · JavaScript · Canvas</text>
+<text x="448" y="231" fill="#B7C7DD" font-size="16" font-weight="400">标注编辑 · 结果查看 · 评分页面</text>
+<rect x="800" y="128" width="352" height="126" rx="16" fill="#111E31" stroke="#2A3A52"/>
+<rect x="820" y="150" width="4" height="24" rx="2" fill="#C4A4FF"/>
+<text x="836" y="170" fill="#F4F7FC" font-size="21" font-weight="600">批处理与集成</text>
+<text x="824" y="204" fill="#B7C7DD" font-size="16" font-weight="400">Python CLI · 子进程调用</text>
+<text x="824" y="231" fill="#B7C7DD" font-size="16" font-weight="400">JSON 协议 · 外部数据采集</text>
+<text x="48" y="287" fill="#879CB9" font-size="13" font-weight="600">02 / PYTHON 应用服务</text>
+<rect x="48" y="303" width="352" height="126" rx="16" fill="#111E31" stroke="#2A3A52"/>
+<rect x="68" y="325" width="4" height="24" rx="2" fill="#54D9D0"/>
+<text x="84" y="345" fill="#F4F7FC" font-size="21" font-weight="600">推理任务</text>
+<text x="72" y="379" fill="#B7C7DD" font-size="16" font-weight="400">请求构建 · 阶段编排</text>
+<text x="72" y="406" fill="#B7C7DD" font-size="16" font-weight="400">进度事件 · 资源管理</text>
+<rect x="424" y="303" width="352" height="126" rx="16" fill="#111E31" stroke="#2A3A52"/>
+<rect x="444" y="325" width="4" height="24" rx="2" fill="#93AEFF"/>
+<text x="460" y="345" fill="#F4F7FC" font-size="21" font-weight="600">标注与结果</text>
+<text x="448" y="379" fill="#B7C7DD" font-size="16" font-weight="400">本机服务 · 关联校验</text>
+<text x="448" y="406" fill="#B7C7DD" font-size="16" font-weight="400">结果导入导出 · 便携任务包</text>
+<rect x="800" y="303" width="352" height="126" rx="16" fill="#111E31" stroke="#2A3A52"/>
+<rect x="820" y="325" width="4" height="24" rx="2" fill="#C4A4FF"/>
+<text x="836" y="345" fill="#F4F7FC" font-size="21" font-weight="600">评测与汇总</text>
+<text x="824" y="379" fill="#B7C7DD" font-size="16" font-weight="400">匹配评分 · 报告生成</text>
+<text x="824" y="406" fill="#B7C7DD" font-size="16" font-weight="400">独立汇总脚本 · 版本分析</text>
+<text x="48" y="462" fill="#879CB9" font-size="13" font-weight="600">03 / 计算、运行时与数据</text>
+<rect x="48" y="478" width="352" height="126" rx="16" fill="#111E31" stroke="#2A3A52"/>
+<rect x="68" y="500" width="4" height="24" rx="2" fill="#54D9D0"/>
+<text x="84" y="520" fill="#F4F7FC" font-size="21" font-weight="600">视觉计算</text>
+<text x="72" y="554" fill="#B7C7DD" font-size="16" font-weight="400">OpenCV · NumPy · SciPy</text>
+<text x="72" y="581" fill="#B7C7DD" font-size="16" font-weight="400">图像处理 · 几何变换</text>
+<rect x="424" y="478" width="352" height="126" rx="16" fill="#111E31" stroke="#2A3A52"/>
+<rect x="444" y="500" width="4" height="24" rx="2" fill="#93AEFF"/>
+<text x="460" y="520" fill="#F4F7FC" font-size="21" font-weight="600">模型推理</text>
+<text x="448" y="554" fill="#B7C7DD" font-size="16" font-weight="400">ONNX Runtime · TensorRT</text>
+<text x="448" y="581" fill="#B7C7DD" font-size="16" font-weight="400">模型会话 · GPU 运行时</text>
+<rect x="800" y="478" width="352" height="126" rx="16" fill="#111E31" stroke="#2A3A52"/>
+<rect x="820" y="500" width="4" height="24" rx="2" fill="#C4A4FF"/>
+<text x="836" y="520" fill="#F4F7FC" font-size="21" font-weight="600">存储与报告</text>
+<text x="824" y="554" fill="#B7C7DD" font-size="16" font-weight="400">SQLite · JSON · DZI / FOV</text>
+<text x="824" y="581" fill="#B7C7DD" font-size="16" font-weight="400">HTML · Node.js / Excel 生成</text>
+<rect x="48" y="638" width="1104" height="68" rx="16" fill="#14253B" stroke="#2A3A52"/>
+<text x="72" y="680" fill="#54D9D0" font-size="18" font-weight="600">任务与验证</text>
+<text x="264" y="680" fill="#E3EBF7" font-size="17" font-weight="400">后台任务 · 子进程隔离 · 文件锁 · 原子保存 · Pytest</text>
+<text x="48" y="750" fill="#879CB9" font-size="12" font-weight="400">技术分层示意 · 标注与报告可独立于模型推理运行</text>
+</g></svg>

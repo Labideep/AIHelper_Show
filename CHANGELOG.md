@@ -6,7 +6,8 @@ All notable public showcase updates are recorded here.
 
 ### Changed
 
-- Made both desktop GIFs directly visible and preserved the accessible feature descriptions, with supporting sections explaining model coordination, board geometry, version analysis, and annotation integrity.
+- Corrected both GIF descriptions to results from different manufacturing processes, renamed the assets, and arranged them side by side with links to the originals.
+- Preserved the accessible feature descriptions and replaced repeated project explanations with business architecture, technology layers, and a supporting-tool inventory.
 - Moved implementation detail and historical test counts from the READMEs to supporting documentation.
 - Expanded both READMEs from inference-focused introductions to annotation, interactive visualization, scoring, version comparison, and data delivery.
 - Documented aggregate scoring, HTML dashboards, Excel output, diagnostics, and supporting standalone scripts.
@@ -14,6 +15,7 @@ All notable public showcase updates are recorded here.
 
 ### Added
 
+- Localized Chinese and English business-architecture and technology-stack diagrams.
 - A detailed feature catalog covering desktop workflows, browser tools, portable annotation, external interfaces, and specialized utilities.
 - A capability flow diagram and an expanded architecture diagram distinguishing inference, annotation, evaluation, and report generation.
 - Explicit boundaries for local annotation services, report resources, Excel dependencies, DIR diagnostics, and integration references.
@@ -31,7 +33,7 @@ All notable public showcase updates are recorded here.
 ### Added
 
 - Public product overview in Chinese and English.
-- Product workflow and batch-processing demonstrations.
+- Desktop result demonstrations for different manufacturing processes.
 - Public architecture and inference-pipeline diagrams.
 - Engineering decisions, project story, and publishing checklist.
 - Explicit private-source and confidentiality boundaries.
