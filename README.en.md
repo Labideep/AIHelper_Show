@@ -1,152 +1,86 @@
 <div align="center">
 
-<img src="assets/hero.png" width="100%" alt="AIHelper PCB/AOI vision workbench concept illustration">
-
 # AIHelper
 
-### A PCB/AOI vision development and evaluation workbench
+### Run models. Annotate images. Review results. Compare versions.
 
-Model debugging, browser annotation, interactive visualization, quality scoring, and version comparison — with tools for annotation handoff and data collection.
+A PCB/AOI vision toolkit for inspecting and evaluating model results.
 
-<p>
-  <img alt="Python" src="https://img.shields.io/badge/Python-3.11%20%7C%203.12-3776AB?logo=python&logoColor=white">
-  <img alt="Computer Vision" src="https://img.shields.io/badge/Computer%20Vision-AOI-00A6A6">
-  <img alt="Inference" src="https://img.shields.io/badge/Inference-ONNX%20%7C%20TensorRT-76B900">
-  <img alt="Source" src="https://img.shields.io/badge/Source-Private-7C3AED">
-</p>
-
-[中文](README.md) · [Annotation & visualization](#browser-annotation-and-visualization) · [Scoring & comparison](#quality-reports-and-version-comparison) · [Full feature catalog (中文)](docs/features.md)
+[Demo](#see-it-in-action) · [Features](#what-you-can-do) · [Version comparison](#a-typical-version-comparison) · [Full feature catalog (中文)](docs/features.md) · [中文](README.md)
 
 </div>
 
-> [!IMPORTANT]
-> This is the public showcase for AIHelper. Business source code, model weights, production data, and internal configuration remain in a private repository.
+> This is the public showcase for AIHelper. Source code, models, and production data remain private.
 
-## Overview
+AIHelper supports algorithm development, testing, and annotation for PCB automated optical inspection (AOI). Run detection on the desktop, edit annotations and inspect errors in the browser, then compare model versions through quality reports.
 
-AIHelper supports algorithm development, evaluation, annotation, and data collection. The desktop workbench runs and inspects models; browser tools maintain ground truth and review predictions and scores; standalone reporting scripts aggregate existing evaluations into HTML dashboards and Excel workbooks.
+## See it in action
 
-| Area | What users can do |
-| :--- | :--- |
-| Inference and debugging | Inspect detection, classification, orientation, substructure, and OCR across board, region, and standalone tasks |
-| HTML annotation | Edit rotated boxes, parent-child annotations, OCR text and reading direction, and evaluation exclusions |
-| HTML visualization | Toggle result layers, compare predictions with GT, and locate missed, extra, or misclassified objects |
-| Quality scoring | Evaluate detection, classification, substructure, and OCR separately; inspect geometric quality |
-| Version comparison | Compare programs and versions, inspect component categories, prioritize issues, and export HTML and Excel |
-| Data delivery | Hand off portable annotation packages, reuse Result v2, integrate headless inference, and collect image crops |
+Load a program, run detection, classification, and text recognition, and inspect progress and results in one view.
 
-![Conceptual flow from inference and human annotation to evaluation and version reports](assets/workflow.svg)
+![Desktop demo: running a program and inspecting detection results](assets/smt-workflow.gif)
 
-This is a capability diagram. Human annotation maintains ground truth (GT); evaluation reads it without changing it. Saved results can also be reviewed or evaluated directly.
+## What you can do
 
-## Browser annotation and visualization
+### Run detection and inspect each component
 
-### HTML annotation workbench
+Zoom from the full board to an individual component to inspect boxes, categories, internal structures, and recognized text. Run a particular stage or selected region as needed, or process multiple programs in a batch.
 
-Switch between board views and component crops to annotate Stage1 components, Stage2 substructures, and OCR. Edit rotated boxes by drawing, moving, resizing, or changing angles; use multiple selection, copy, cut, paste, delete, and undo. OCR annotations support a primary transcription, alternative acceptable text, and reading direction. Exclusion regions define the evaluation scope.
+The desktop also lets you inspect software-generated detection boxes and compare synchronized views before and after box completion.
 
-The local annotation service validates parent-child references and document revisions, with backups and transactional saving across the three annotation documents. Portable packages bundle image sources, GT, frozen predictions, and a Windows annotation runtime for handoff to another computer. Saving requires the local service; the package uses sequential handoff, without concurrent editing or automatic merging.
+### Annotate in the browser
 
-### Interactive HTML result review
+Draw and adjust rotated boxes for components, leads, pads, and text. Use multiple selection, copy and paste, undo, and component navigation. OCR annotations also capture text and reading direction.
 
-The prediction viewer provides board zoom and pan, stage layer toggles, category counts, and linked component lists. Evaluation reports overlay GT and predictions, filter missed detections, false positives, classification errors, or box quality, and navigate to the corresponding image location. CLS and OCR have dedicated result and evaluation views.
+The editor saves ground truth through a local service. Portable tasks can be handed to another Windows computer for continued annotation.
 
-The desktop software-semantics workspace additionally offers synchronized views before and after box completion, plus a program detection tree. These tools connect individual image evidence with the reported metrics.
+### Find problems on the image
 
-## Quality reports and version comparison
+Interactive HTML views overlay predictions and human annotations. Filter missed detections, false positives, classification errors, or box positioning issues, then navigate directly to the relevant component.
 
-| Analysis level | Report content |
-| :--- | :--- |
-| Object | IoU, GT coverage, prediction coverage, center displacement, width/height error, and angle error |
-| Program | Separate Stage1 detection, CLS classification, Stage2 substructure, and OCR detection/recognition/direction results |
-| Program batch | Aggregate metrics, component categories, worst programs, and geometric error distributions |
-| Version | Stage-specific comparisons, metric deltas, issue prioritization, and links to source reports |
+Detection, classification, and text recognition are evaluated separately, helping distinguish a missed object from an incorrect category, misplaced box, or transcription error.
 
-Detection and classification are scored separately. A stage with available results and the required GT can be evaluated without rerunning the full pipeline. DIR differences against Stage1 GT angles remain diagnostic; they are not a standalone DIR accuracy score.
+### Compare versions with quality reports
 
-### Aggregate scoring tools
+Aggregate scores across programs into **HTML dashboards and Excel reports**. Compare versions, programs, and component categories.
 
-`综合评分.py` reads existing score records from one output directory or multiple version directories and produces:
+Development reports prioritize issues, show position, size, and angle error distributions, and link back to individual program reports for image inspection.
 
-- **An Excel workbook** with stage, program, category, and version comparison metrics.
-- **A summary or version-comparison dashboard** for stage and program performance.
-- **A development diagnostics page** with version/stage/program/component filters, risk ordering, geometric error distributions, and links back to individual reports.
+[Explore aggregate scoring and its companion tools (中文)](docs/features.md#5-综合评分版本对比与开发诊断)
 
-Original run records are retained; comparisons select the corresponding latest batches by default. Scores stay separate by task. HTML can be generated with `--html-only`; Excel generation requires Node.js and `@oai/artifact-tool`.
+## A typical version comparison
 
-The companion tools are `生成版本对比驾驶舱.py`, `生成开发调试指标.py`, and `生成工作簿.mjs`. A separate `benchmark_aggregate_report.py` generates batch summaries. Their roles are documented in the [feature catalog (中文)](docs/features.md); scripts and production reports remain in the private repository.
+Suppose you have changed a model and want to understand where it improves or regresses:
 
-## Data delivery and specialized tools
+1. **Run the same programs** with the same inputs and human annotations, saving results and scores for both versions.
+2. **Compare the reports** to find changes in detection, classification, or text recognition for specific programs and categories.
+3. **Inspect individual objects** by following a summary link to a program report and locating missed, misclassified, or poorly positioned detections.
+4. **Continue debugging with those examples**, using the images, annotations, and predictions to decide what to investigate next.
 
-| Tool | Purpose |
-| :--- | :--- |
-| Portable annotation packages | Continue annotation on another Windows computer and return the GT directory |
-| Data collection interface | Invoke board detection plus classification or image OBB through subprocesses and a JSON contract |
-| Image batch processing | Recursive discovery, resume, segmented runs, per-image persistence, and progress events |
-| DIP crop collection | Save native image crops by predicted category, together with a manifest |
-| Standalone AI detection plans | Run OCR, solder-bridge detection, or segmentation in rotated regions |
-| Native solder-bridge integration reference | C ABI, C++/C# examples, build tools, and runtime checks |
-| Environment and regression tools | Startup checks, backend checks, cache preparation, input fingerprints, checkpoint comparison, and semantic replay |
+Saved results can be evaluated directly, and report aggregation does not require another inference run. Scoring reads human annotations without automatically changing them to improve a score.
 
-SMT, THT, and DIP have different supported stage combinations. Crop collection is a data preparation capability; the native SDK is an integration reference, with model quality and device acceptance assessed separately.
+<details>
+<summary><strong>Watch the multi-program batch demo</strong></summary>
 
-## Demo
+Process multiple programs, follow progress, and save results and reports for each one.
 
-These recordings show desktop inference and batch execution. Browser annotation, scoring, and version dashboards are described above and in the feature catalog.
+![Desktop demo: multi-program batch execution and progress](assets/multi-program.gif)
 
-### Single-program inference
+</details>
 
-<div align="center">
-  <img src="assets/smt-workflow.gif" width="92%" alt="AIHelper single-program workflow demo">
-</div>
+## More useful tools
 
-### Multi-program batch execution
+- **Annotation handoff:** package images, existing annotations, and predictions so another computer can continue the task and return the annotations.
+- **Sample collection and batches:** process image folders with resume support and organize component crops by predicted category.
+- **Local algorithm experiments:** run text recognition, solder-bridge detection, or segmentation in selected regions.
+- **External integration:** provide detection results through headless interfaces for data collection and other workflows.
 
-<div align="center">
-  <img src="assets/multi-program.gif" width="92%" alt="AIHelper multi-program batch demo">
-</div>
+The [full feature catalog (中文)](docs/features.md) also covers standalone tools, including `综合评分.py`, DIP crop collection, and the native solder-bridge integration reference.
 
-## Architecture
+## Learn more
 
-<div align="center">
-  <img src="assets/architecture.svg" width="96%" alt="AIHelper public architecture overview">
-</div>
+- [Feature catalog (中文)](docs/features.md): capabilities, standalone tools, and usage boundaries.
+- [Project story (中文)](docs/project-story.md): the problems behind the project and a typical workflow.
+- [Architecture (中文)](docs/architecture.md) · [Engineering (中文)](docs/engineering.md): implementation, validation, and design decisions.
 
-Inference interfaces share the application pipeline. Browser annotation uses a local service to maintain GT. Viewers and evaluators consume structured results; standalone aggregation scripts read saved score records. Stable data contracts connect these tools. See [Architecture (中文)](docs/architecture.md).
-
-## Inference pipeline
-
-<div align="center">
-  <img src="assets/pipeline.svg" width="100%" alt="AIHelper inference pipeline">
-</div>
-
-The SMT baseline uses Input → SMT → CLS → DIR → IC → OCR. DIR corrects production parent boxes; Stage2 GT mode uses GT parents instead. THT and DIP use their supported stage combinations, with results restored to board coordinates.
-
-## Core engineering work
-
-- Consolidated desktop, batch, and standalone inference behind one request and execution contract.
-- Established coordinate and evidence lineage for rotated geometry and parent-child results.
-- Kept inference work in background tasks while UI updates remain on the main thread.
-- Built regression gates around immutable golden baselines and preserved difference reports.
-- Connected stable annotation identities with object-level diagnostics, program scores, category summaries, and version reports.
-- Defined lifecycles for model preparation, session pools, concurrency, and GPU-heavy stages.
-
-## Technology
-
-```text
-Application     Python · Qt Desktop GUI · Batch CLI
-Browser tools   HTML · JavaScript · Canvas · Local annotation service
-Vision          OpenCV · ONNX Runtime · TensorRT
-Pipeline        Event-driven orchestration · Typed requests
-Validation      Pytest · Golden baseline · Structured reports
-Reporting       Interactive HTML · Version dashboards · Excel
-Data            DZI · SQLite · JSON · Image tiles
-```
-
-Historical validation record: 1,984 pytest cases collected in the private codebase on 2026-10-23. This is a dated collection count; source regression, model quality, and device acceptance are tracked separately. See [Engineering (中文)](docs/engineering.md).
-
----
-
-<div align="center">
-  <sub>Engineering portfolio · Proprietary source code is not publicly distributed</sub>
-</div>
+<sub>Built with Python · Qt · OpenCV · ONNX Runtime · TensorRT · HTML / JavaScript</sub>
