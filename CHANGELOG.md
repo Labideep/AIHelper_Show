@@ -6,7 +6,8 @@ All notable public showcase updates are recorded here.
 
 ### Changed
 
-- Simplified both READMEs around user tasks, a desktop demo, and a concrete version-comparison walkthrough; moved implementation detail and historical test counts to supporting documentation.
+- Made both desktop GIFs directly visible and preserved the accessible feature descriptions, with supporting sections explaining model coordination, board geometry, version analysis, and annotation integrity.
+- Moved implementation detail and historical test counts from the READMEs to supporting documentation.
 - Expanded both READMEs from inference-focused introductions to annotation, interactive visualization, scoring, version comparison, and data delivery.
 - Documented aggregate scoring, HTML dashboards, Excel output, diagnostics, and supporting standalone scripts.
 - Updated architecture, engineering decisions, project narrative, and suggested repository metadata to cover the full toolchain.

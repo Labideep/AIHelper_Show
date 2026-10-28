@@ -2,23 +2,33 @@
 
 # AIHelper
 
-### Run models. Annotate images. Review results. Compare versions.
+### A PCB/AOI vision development and evaluation workbench
 
-A PCB/AOI vision toolkit for inspecting and evaluating model results.
+Connect multiple models, human annotation, and quality evaluation — from full-board images to individual components and version comparisons.
 
-[Demo](#see-it-in-action) · [Features](#what-you-can-do) · [Version comparison](#a-typical-version-comparison) · [Full feature catalog (中文)](docs/features.md) · [中文](README.md)
+[Demos](#product-demos) · [Features](#what-you-can-do) · [Project depth](#the-problems-the-project-addresses) · [Full feature catalog (中文)](docs/features.md) · [中文](README.md)
 
 </div>
 
 > This is the public showcase for AIHelper. Source code, models, and production data remain private.
 
-AIHelper supports algorithm development, testing, and annotation for PCB automated optical inspection (AOI). Run detection on the desktop, edit annotations and inspect errors in the browser, then compare model versions through quality reports.
+PCB automated optical inspection (AOI) involves locating components, identifying their category and orientation, detecting leads and pads, and reading text. Each step can affect later decisions. A model change then needs evaluation across different boards and component categories.
 
-## See it in action
+AIHelper brings desktop debugging, browser annotation, interactive reports, and batch evaluation into this workflow. Algorithm developers can trace stage results, testers can compare versions, and annotators can maintain ground truth, with their work linked through the same images and results.
 
-Load a program, run detection, classification, and text recognition, and inspect progress and results in one view.
+## Product demos
+
+### One program: inspect multiple detection stages
+
+Load program images, run detection, classification, and text recognition, and inspect stage progress, results, and timing in one view.
 
 ![Desktop demo: running a program and inspecting detection results](assets/smt-workflow.gif)
+
+### Multiple programs: batch execution and saved results
+
+Process multiple programs, follow their execution status, and save results and reports for subsequent score aggregation and version comparison.
+
+![Desktop demo: multi-program batch execution and progress](assets/multi-program.gif)
 
 ## What you can do
 
@@ -48,36 +58,43 @@ Development reports prioritize issues, show position, size, and angle error dist
 
 [Explore aggregate scoring and its companion tools (中文)](docs/features.md#5-综合评分版本对比与开发诊断)
 
-## A typical version comparison
+## The problems the project addresses
 
-Suppose you have changed a model and want to understand where it improves or regresses:
+### Connecting multiple models around the same component
 
-1. **Run the same programs** with the same inputs and human annotations, saving results and scores for both versions.
-2. **Compare the reports** to find changes in detection, classification, or text recognition for specific programs and categories.
-3. **Inspect individual objects** by following a summary link to a program report and locating missed, misclassified, or poorly positioned detections.
-4. **Continue debugging with those examples**, using the images, annotations, and predictions to decide what to investigate next.
+A component's position, category, orientation, internal structure, and text come from different processing steps. An orientation adjustment can change the images used by subsequent cropping and recognition.
 
-Saved results can be evaluated directly, and report aggregation does not require another inference run. Scoring reads human annotations without automatically changing them to improve a score.
+AIHelper connects these steps, retains relationships between components, leads, pads, and text, and lets users compare model results with software-generated detection boxes. When results differ, the processing history helps locate where the difference begins.
 
-<details>
-<summary><strong>Watch the multi-program batch demo</strong></summary>
+### Preserving positions between full boards and small structures
 
-Process multiple programs, follow progress, and save results and reports for each one.
+The same board may be viewed under different lighting and at different image sizes, then tiled, resized, or cropped at an angle. Small differences in a local crop can affect lead, pad, or text positions when mapped back to the board.
 
-![Desktop demo: multi-program batch execution and progress](assets/multi-program.gif)
+AIHelper retains image transforms and result positions, restores results to board coordinates, and supports detailed local viewing. Evaluation examines center displacement, size, angle, and coverage to help identify geometric problems.
 
-</details>
+### Tracing version changes to programs, categories, and objects
 
-## More useful tools
+A model can perform differently across programs and component categories. Version evaluation needs to reveal both overall changes and local problems.
 
-- **Annotation handoff:** package images, existing annotations, and predictions so another computer can continue the task and return the annotations.
-- **Sample collection and batches:** process image folders with resume support and organize component crops by predicted category.
-- **Local algorithm experiments:** run text recognition, solder-bridge detection, or segmentation in selected regions.
-- **External integration:** provide detection results through headless interfaces for data collection and other workflows.
+AIHelper evaluates detection, classification, internal structures, and text recognition separately, then aggregates results by program and component category. Version dashboards, error distributions, and links to source reports let readers follow an unusual metric back to the relevant image.
 
-The [full feature catalog (中文)](docs/features.md) also covers standalone tools, including `综合评分.py`, DIP crop collection, and the native solder-bridge integration reference.
+### Keeping annotation and evaluation grounded in explicit references
 
-## Learn more
+Component, internal-structure, and text annotations are related. Editing or handing off annotations requires checking that these relationships remain valid and that an older browser page cannot overwrite newly saved work.
+
+AIHelper checks relationships and revision conflicts when saving, and retains backups. Scoring reads human-maintained ground truth; saved results can be reevaluated and historical scores can be aggregated again, without automatically changing annotations to improve a score.
+
+## Beyond desktop debugging
+
+The same capabilities support other parts of the workflow:
+
+- **Annotation handoff:** package images, existing annotations, and predictions for continued work on another Windows computer, then return the completed annotations.
+- **Sample preparation:** process image folders with resume support, or collect component crops by predicted category for review and dataset organization.
+- **Standalone algorithms and external calls:** test text recognition, solder-bridge detection, or segmentation in selected regions, and provide results to data collection projects through headless interfaces.
+
+The [full feature catalog (中文)](docs/features.md) also covers `综合评分.py` and its HTML/Excel reporting tools, DIP crop collection, and the native solder-bridge integration reference.
+
+## Project documentation
 
 - [Feature catalog (中文)](docs/features.md): capabilities, standalone tools, and usage boundaries.
 - [Project story (中文)](docs/project-story.md): the problems behind the project and a typical workflow.
